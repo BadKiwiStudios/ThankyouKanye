@@ -1,3 +1,4 @@
+#!/usr/bin/env python
 import random
 import tweepy
 
@@ -8,7 +9,7 @@ api = tweepy.API(auth)
 def memify(text):
     new = []
     b = '.. ok boomer'
-    for i in range(len(lext)-len(b)):
+    for i in range(len(text)-len(b)):
         c = text[i]
         r = random.randint(0,1)
         if r:
@@ -19,4 +20,4 @@ def memify(text):
 
 tweets = api.user_timeline(screen_name="kanyewest")
 first_tweet = tweets[0]
-api.update_status("Thank you @kanyewest, very cool")
+api.update_status(memify(first_tweet),"Thank you @kanyewest, very cool")
